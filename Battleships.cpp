@@ -428,6 +428,27 @@ void shoot()
     _getch();
 
 }
+
+void instructions()
+{
+        cout<<"\n INSTRUCTIONS";
+        cout<<"\n\n >> Battleships is a 2 player game which involves the setting up of 5 ships of different sizes within a 10X10 warzone grid";
+        cout<<"  \n    by one player. ";
+        cout<<" \n\n >> The second player then attempts to sink the ships by providing the launch coordinates of the missile. ";
+        cout<<" \n\n >> The player to sink all ships with the least number of missiles (greater accuracy) wins the game.";
+        cout<<" \n\n >> The 5 battleships are: ";
+        cout<<" \n      > AIRCRAFT CARRIER (5 UNITS)";
+        cout<<" \n      > BATTLESHIP       (4 UNITS)";
+        cout<<" \n      > DESTROYER        (3 UNITS)";
+        cout<<" \n      > SUBMARINE        (3 UNITS)";
+        cout<<" \n      > PATROL BOAT      (2 UNITS)";
+        cout<<" \n\n >> To set up a ship, the player first needs to provide its orientation: Horizontal (H) or Vertical (V).";
+        cout<<" \n\n >> Then the player has to give the coordinates of the starting point of the ship and it will align itself based on orientation.";
+
+        cout<<"\n\n\n\n\n\n\n\n PRESS ANY KEY TO GO BACK";
+        _getch();
+
+}
 void control()
 {
     void menu();
@@ -451,8 +472,8 @@ void control()
         create_field(field2);
         cout<<endl;
         shoot();
-        p1._shots=shots;
-        p1._accuracy=accuracy;
+        p2._shots=shots;
+        p2._accuracy=accuracy;
         system("cls");
         player=1;
         cout<<"\n"<<p2._name<<", set your ships";
@@ -471,17 +492,15 @@ void control()
         create_field(field2);
         cout<<endl;
         shoot();
-        p2._shots=shots;
-        p2._accuracy=accuracy;
+        p1._shots=shots;
+        p1._accuracy=accuracy;
         void result();
         result();
         menu();
     }
     else if(option==2)
     {
-        cout<<"\n INSTRUCTIONS";
-        cout<<"\n\n\n\n\n\n\n\n\n\n PRESS ANY KEY TO GO BACK";
-        _getch();
+        instructions();
         menu();
     }
     else if(option==3)
@@ -499,7 +518,7 @@ void menu()
         if(option==1)
         {
             cout<<"\n       MENU";
-            cout<<"\n >>PLAY GAME";
+            cout<<"\n >> PLAY GAME";
             cout<<"\n INSTRUCTIONS";
             cout<<"\n EXIT";
         }
@@ -507,7 +526,7 @@ void menu()
         {
             cout<<"\n       MENU";
             cout<<"\n PLAY GAME";
-            cout<<"\n >>INSTRUCTIONS";
+            cout<<"\n >> INSTRUCTIONS";
             cout<<"\n EXIT";
         }
         else if(option==3)
@@ -515,7 +534,7 @@ void menu()
             cout<<"\n       MENU";
             cout<<"\n PLAY GAME";
             cout<<"\n INSTRUCTIONS";
-            cout<<"\n >>EXIT";
+            cout<<"\n >> EXIT";
         }
         cout<<"\n\n\n\n\n\n\n\n\n\n\n\n USE ARROW KEYS TO SCROLL AND ENTER TO SELECT";
         chh=_getch();
@@ -567,6 +586,7 @@ void title()
         delay(100);
     }
     delay(1500);
+    _getch();
     system("cls");
 }
 
